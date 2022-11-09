@@ -1,0 +1,36 @@
+<div class="background text-center">
+  <form
+    class="form-signin animated fadeIn"
+    autocomplete="off"
+    [formGroup]="LoginForm"
+    (ngSubmit)="login()"
+  >
+    <img class="mb-4 img" src="assets/iconUser.jpg" alt="logo" />
+      <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+    <label style="margin-right:250px;" for="inputEmail"><b>Email</b></label>
+    <input
+      type="email"
+      class="form-control mb-2"
+      id="inputEmail"
+      placeholder="Ingresa tu email"
+      formControlName="email"
+      [class.is-invalid]="emailValidate"
+
+    />
+    <label style="margin-right:250px;" for="inputEmail"><b>Password</b></label>
+    <input
+      type="password"
+      class="form-control mb-3"
+      id="inputPassword"
+      placeholder="Ingresa tu contraseña"
+      formControlName="password"
+      [class.is-invalid]="passwordValidate"
+
+    />
+        <button type="submit" class="btn btn-success btn-block mb-2">
+Iniciar Sesión
+    </button><br><br>
+    No tienes una cuenta? Registrate <a [routerLink]="['/register']">Aquí</a>
+    <p class="mt-4 mb-3 text-muted">© Alex Gonzalez - 2022</p>
+  </form>
+</div>

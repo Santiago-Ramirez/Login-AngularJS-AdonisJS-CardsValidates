@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+
+<div class="container col-5" style="background-color: #EEEEEE;">
+  <form class="row g-3"
+  autocomplete="off"
+  [formGroup]="makeGameForm"
+    (ngSubmit)="juegoReg()">
+    <h3>Agregar nuevo videojuego</h3>
+
+    <div class="col-md-6">
+      <b for="inputTitulo" class="form-label">Titulo</b>
+      <input type="text" class="form-control"
+      id="inputTitulo"
+      placeholder="Ingresa el titulo del juego"
+      formControlName="titulo"
+      [class.is-invalid]="tituloValidate">
+    </div>
+
+    <div class="col-md-6">
+      <b for="inputClasifiacion" class="form-label">Clasificacion</b>
+      <select class="form-select" aria-label="Default select example"
+      id="inputClasificacion"
+      placeholder="Ingresa la calificacion del juego"
+      formControlName="clasificacion"
+      [class.is-invalid]="clasificacionValidate">
+        <option selected>0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <b for="inputDescripcion" class="form-label">Descripcion</b>
+      <div class="form-floating">
+        <textarea type="text" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"
+        id="inputDescripcion"
+        placeholder="Ingresa la descripcion del juego"
+        formControlName="descripcion"
+        [class.is-invalid]="descripcionValidate"></textarea>
+        <label for="floatingTextarea2">Escrbia su descrición completa de su videojuego aquí por favor</label>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <b for="inputFechaLanzamiento" class="form-label">Fecha de lanzamiento</b>
+      <input type="date" class="form-control" id="fecha"
+      id="inputFecha"
+        formControlName="lanzamientoFecha"
+        [class.is-invalid]="fechaLanzamientoFechaValidate">
+    </div>
+
+    <div class="col-md-6">
+      <b for="inputDescargas" class="form-label">Número de descargas</b>
+      <input type="number" class="form-control" id="inputEmail4"
+      id="inputDescargas"
+        placeholder="Ingresa las descargas del juego"
+        formControlName="descargas"
+        [class.is-invalid]="numeroDescargasValidate">
+    </div>
+
+    <div class="col-md-6">
+      <div>
+        <input class="form-check-input"
+        type="checkbox" id="checkboxNoLabel"
+        value="1" aria-label="..."
+        formControlName="comingSoon"
+        ><b for="inputEmail4" class="form-label"
+        >  Proximamente</b>
+      </div>
+    </div>
+    <div class="d-grid gap-1 col-6 mx-auto">
+      <br><br><button type="submit" class="btn btn-success">Agregar</button><br><br>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,55 @@
+<div class="background text-center">
+  <form
+    class="form-signin animated fadeIn"
+    autocomplete="off"
+    [formGroup]="registerForm"
+    (ngSubmit)="register()"
+  >
+    <img class="mb-4 img" src="assets/iconUser.jpg" alt="logo" />
+      <h1 class="h3 mb-3 font-weight-normal">Registrarse</h1>
+    <label style="margin-right:250px;" for="inputNombre"><b>Nombre</b></label>
+    <input
+      type="email"
+      class="form-control mb-2"
+      id="inputNombre"
+      placeholder="Ingresa tu email"
+      formControlName="nombre"
+      [class.is-invalid]="nombreValidate"
+
+    />
+    <label style="margin-right:250px;" for="inputEmail"><b>Email</b></label>
+    <input
+      type="text"
+      class="form-control mb-3"
+      id="inputEmail"
+      placeholder="Ingresa tu contraseña"
+      formControlName="email"
+      [class.is-invalid]="emailValidate"
+    />
+
+    <label style="margin-right:250px;" for="inputPassword"><b>Contraseña</b></label>
+    <input
+      type="password"
+      class="form-control mb-3"
+      id="inputPassword"
+      placeholder="Confirm Password"
+      formControlName="password"
+      [class.is-invalid]="passwordValidate"
+
+    />
+    <label class="col-7" style="margin-right:250px;" for="inputPassword2"><b>Confirmar contraseña</b></label>
+    <input
+      type="password"
+      class="form-control mb-3"
+      id="inputPassword2"
+      placeholder="Confirm Password"
+      formControlName="password2"
+      [class.is-invalid]="password2Validate"
+
+    />
+    <button type="submit" class="btn btn-success btn-block mb-2" [disabled]="password2Validate">
+Registrarse    </button><br><br>
+    Ya tienes una cuenta? Inicia sesión <a [routerLink]="['/login']">Aquí</a>
+    <p class="mt-4 mb-3 text-muted">© Alex Gonzalez - 2022</p>
+  </form>
+</div>
